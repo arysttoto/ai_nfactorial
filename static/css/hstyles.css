@@ -1,0 +1,36 @@
+a {
+    text-decoration: none;
+    color: grey;
+}
+h1 {
+    text-align: center;
+    padding-bottom: 15px;
+}
+
+h4::before {
+    content: '';
+    position: absolute;
+    background: #222;
+    left: 0;
+    margin-top: 1.9rem;
+    margin-left: 1.05rem;
+    bottom: 7;
+    width: 40px;
+    height: 3px;
+}
+
+.gachon::before {
+    content: '';
+    position: absolute;
+    background: #222;
+    left: 0;
+    margin-top: 3.69rem;
+    margin-left: 1.05rem;
+    bottom: 7;
+    width: 40px;
+    height: 3px;
+}
+
+h1 {
+    font-family: 'Unbounded', cursive;
+}

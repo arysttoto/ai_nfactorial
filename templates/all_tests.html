@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Our Tests
+{% endblock %}
+
+{% block links %}
+<style>
+    .row.mb-2 {
+        margin: 5%;
+    }
+</style>
+{% endblock %}
+
+{% block body %}
+<section class="py-5 text-center container">
+    <div class="row py-lg-5">
+        <div class="col-lg-6 col-md-8 mx-auto">
+            <h1 class="fw-light">iHealth Tests!</h1>
+            <p class="lead text-muted">Our company works hard for you to have the most accurate results of the tests you take.</p>
+        </div>
+    </div>
+</section>
+<div class="row mb-2">
+    {% for test in tests %}
+    <div class="col-md-6">
+      <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+          <strong class="d-inline-block mb-2 text-primary">{{ test[0] }}</strong>
+          <h3 class="mb-0">{{ test[1] }}</h3>
+          <div class="mb-1 text-body-secondary">{{ test[4] }}</div>
+          <p class="card-text mb-auto">{{ test[2] }}</p>
+          <a href="/our-tests/{{ test[0] }}" class="stretched-link">Take a test!</a>
+        </div>
+        <div class="col-auto d-none d-lg-block">
+          <img class="bd-placeholder-img" width="200" height="250" src="{{ url_for('static', filename=test[5]) }}">
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

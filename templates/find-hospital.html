@@ -1,0 +1,100 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Find Hospital!
+{% endblock %}
+
+{% block links %}
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+  }
+
+  h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-top: 50px;
+    margin-bottom: 30px;
+  }
+
+  form {
+    max-width: 500px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    border: 1px solid #dddddd;
+    padding: 20px;
+    border-radius: 5px;
+  }
+
+  label {
+    display: block;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+  }
+
+  input[type="text"] {
+    padding: 10px;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    border: 1px solid #dddddd;
+    margin-bottom: 20px;
+    width: 100%;
+  }
+
+  input[type="submit"] {
+    background-color: #4CAF50;
+    color: #ffffff;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  input[type="submit"]:hover {
+    background-color: #3e8e41;
+  }
+  .container {
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 5%;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0px 0px 5px #888;
+    border-radius: 5px;
+    text-align: justify;
+    text-justify: inter-word;
+  }
+  .container h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  .container p {
+    margin-bottom: 20px;
+    color: #666;
+  }
+</style>
+{% endblock %}
+
+{% block body %}
+<h1>Enter Your Disease, Country, and City</h1>
+<form method="POST">
+  <label for="disease">Disease:</label>
+  <input type="text" name="disease" id="disease" required><br>
+  <label for="country">Country:</label>
+  <input type="text" name="country" id="country" required><br>
+  <label for="city">City:</label>
+  <input type="text" name="city" id="city" required><br>
+  <input type="submit" value="Submit">
+</form>
+{% if hospitals %}
+<div class="container">
+  <h1>These are good decisions for your case</h1>
+  <p>
+    {{ hospitals }}
+  </p>
+</div>
+{% endif %}
+{% endblock %}

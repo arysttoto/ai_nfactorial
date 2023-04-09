@@ -1,0 +1,95 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Healthcare system
+{% endblock %}
+
+{% block links %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/hstyles.css') }}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded&display=swap" rel="stylesheet">
+{% endblock %}
+
+{% block body %}
+<div class="continents">
+    <div class="continent_africa">
+        <div class="album py-5 bg-light">
+            <h1>Africa</h1>
+            <div class="container">
+              <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                {% for hospital_africa in hospitals_africa %}
+                <div class="col">
+                  <div class="card shadow-sm">
+                    <img class="bd-placeholder-img card-img-top" src="{{ url_for('static', filename=hospital_africa[3]) }}">
+                    <div class="card-body">
+                        <h4>{{ hospital_africa[1] }}</h4>
+                        <p class="card-text">{{ hospital_africa[2] }}</p>
+                      <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                          <button type="button" class="btn btn-sm btn-outline-secondary"><a href="{{ hospital_africa[4] }}">View</a></button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                {% endfor %}
+              </div>
+            </div>
+        </div>
+    </div>
+    <div class="continent_asia">
+        <div class="album py-5 bg-light">
+            <h1>Asia</h1>
+            <div class="container">
+              <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                {% for hospital_asia in hospitals_asia %}
+                <div class="col">
+                  <div class="card shadow-sm">
+                    <img class="bd-placeholder-img card-img-top" src="{{ url_for('static', filename=hospital_asia[3]) }}">
+                    <div class="card-body">
+                        <h4>{{ hospital_asia[1] }}</h4>
+                        <p class="card-text">{{ hospital_asia[2] }}</p>
+                      <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                          <button type="button" class="btn btn-sm btn-outline-secondary"><a href="{{ hospital_asia[4] }}">View</a></button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                {% endfor %}
+              </div>
+            </div>
+        </div>
+    </div>
+    <div class="continent_europe">
+        <div class="album py-5 bg-light">
+            <h1>Europe</h1>
+            <div class="container">
+              <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                {% for hospital_europe in hospitals_europe %}
+                <div class="col">
+                  <div class="card shadow-sm">
+                    <img class="bd-placeholder-img card-img-top" src="{{ url_for('static', filename=hospital_europe[3]) }}">
+                    <div class="card-body">
+                        <h4>{{ hospital_europe[1] }}</h4>
+                        <p class="card-text">{{ hospital_europe[2] }}</p>
+                      <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                          <button type="button" class="btn btn-sm btn-outline-secondary"><a href="{{ hospital_europe[4] }}">View</a></button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                {% endfor %}
+              </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

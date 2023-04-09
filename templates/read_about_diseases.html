@@ -1,0 +1,93 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Read about a disease!
+{% endblock %}
+
+{% block links %}
+<style>
+  .p-5 {
+    padding: 5rem;
+  }
+
+  .mb-4 {
+    margin-bottom: 4rem;
+  }
+
+  .bg-body-tertiary {
+    background-color: #e5e5e5;
+  }
+
+  .rounded-3 {
+    border-radius: 0.3rem;
+  }
+
+  .container-fluid {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .py-5 {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+
+  .display-5 {
+    font-size: 2.5rem;
+    font-weight: 300;
+    line-height: 1.2;
+  }
+
+  .fw-bold {
+    font-weight: bold;
+  }
+
+  input[type=text] {
+    width: 100%;
+    padding: 0.5rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border: none;
+    border-radius: 0.3rem;
+  }
+
+  button[type=submit] {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 0.3rem;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+  }
+
+  button[type=submit]:hover {
+    background-color: #0069d9;
+  }
+  .h-100.p-5.text-bg-dark.rounded-3 {
+    margin: 5%;
+  }
+</style>
+{% endblock %}
+
+{% block body %}
+<form class="p-5 mb-4 bg-body-tertiary rounded-3" method="POST">
+  <div class="container-fluid py-5">
+    <h1 class="display-5 fw-bold">Search any disease ↓</h1>
+    <input type="text" name="username" placeholder="Enter your username, so your articles could be saved." required>
+    <input type="text" name="disease-input" placeholder="{{ session['symptom_based_prognosis'] }}" required>
+    <button type="submit">Search</button>
+  </div>
+</form>
+{% if essay %}
+<div class="h-100 p-5 text-bg-dark rounded-3">
+  <h2>{{ disease_type }}: {{ topic }}</h2>
+  <p>
+    {{ essay }}
+  </p>
+  <button class="btn btn-outline-light" type="button"><a href="/find-my-hospital">Find a hospital!</a></button>
+</div>
+{% endif %}
+{% endblock %}

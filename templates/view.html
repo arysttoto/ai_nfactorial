@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Post
+{% endblock %}
+
+{% block links %}
+<style>
+    #disqus_thread {
+        width: 90%;
+        margin-left: 5%;
+        margin-top: 5%;
+    }
+</style>
+{% endblock %}
+
+{% block body %}
+<div class="bg-light p-5 rounded">
+    <div class="col-sm-8 py-5 mx-auto">
+        <h1 class="display-5 fw-normal">{{ article[2] }}</h1>
+        <p>{{ article[3] }}</p>
+        <br>
+        <p>Published by: {{ article[1] }}, on {{ article[4] }}</p>
+    </div>
+</div>
+<div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    this.page.url = PAGE_URL;
+    this.page.identifier = {{ article[0] }};
+    };
+    (function() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://ihealthcorp-pythonanywhere-com.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();
+</script>
+{% endblock %}

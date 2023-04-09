@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bstyle.css') }}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit&family=Unbounded&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='img/icon_logo.png') }}">
+    <title>{% block title %}{% endblock %}</title>
+    {% block links %}{% endblock %}
+</head>
+<body>
+    <header class="d-flex flex-wrap justify-content-center py-3 border-bottom">
+      <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+        <img class="bi me-2" style="width: 50px; height: 40px;" src="{{ url_for('static', filename='img/logo.png') }}">
+        <span class="fs-4">MaiHealth</span>
+      </a>
+
+      <ul class="nav nav-pills">
+        <li class="nav-item"><a href="/" class="nav-link" style="color: black;">Main</a></li>
+        <li class="nav-item"><a href="/our-tests" class="nav-link" style="color: black;">Our tests</a></li>
+        <li class="nav-item"><a href="/find-my-disease" class="nav-link" style="color: black;">Prognosis</a></li>
+        <li class="nav-item"><a href="/find-my-hospital" class="nav-link" style="color: black;">Find Hospital</a></li>
+        <li class="nav-item"><a href="/my-articles" class="nav-link" style="color: black;">My readings</a></li>
+        <li class="nav-item"><a href="/read-about-diseases" class="nav-link active" aria-current="page">Read about a disease!</a></li>
+      </ul>
+    </header>
+
+    {% block body %}{% endblock %}
+
+    <footer class="bottom_info">
+      <div class="col mb-3">
+        <a href="/" class="d-flex align-items-center mb-3 link-dark text-decoration-none">
+          <img class="bi me-2" style="width: 50px; height: 40px;" src="{{ url_for('static', filename='img/logo.png') }}">
+        </a>
+        <p class="text-muted">© 2022</p>
+      </div>
+      <div class="col mb-3">
+        <h5>Website Pages</h5>
+        <ul class="nav flex-column">
+          <li class="nav-item mb-2"><a href="/" class="nav-link p-0 text-muted">Home</a></li>
+          <li class="nav-item mb-2"><a href="/our-tests" class="nav-link p-0 text-muted">Tests</a></li>
+          <li class="nav-item mb-2"><a href="/healthcare" class="nav-link p-0 text-muted">Hospitals</a></li>
+          <li class="nav-item mb-2"><a href="/articles" class="nav-link p-0 text-muted">Publications</a></li>
+          <li class="nav-item mb-2"><a href="/create-article" class="nav-link p-0 text-muted">Add a Solution</a></li>
+        </ul>
+      </div>
+    </footer>
+</body>
+</html>

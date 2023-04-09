@@ -1,0 +1,28 @@
+.container {
+  max-width: 50%;
+}
+
+#content {
+    padding: 1em;
+    outline: 2px black solid;
+    border: 1px solid #dddddd;
+    border-radius: 10px;
+    overflow: hidden;
+    outline: none;
+}
+
+#username {
+    width: 50%;
+}
+
+.input-group {
+    margin-bottom: 1.02rem;
+}
+
+.col-12 {
+    margin-left: 1.02rem;
+}
+
+.article {
+    margin-left: 1.02rem;
+}

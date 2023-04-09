@@ -1,0 +1,20 @@
+.me-2 {
+    margin-left: 1.05rem;
+}
+.nav-pills {
+    margin-right: 1.05rem;
+}
+.mb-3 a img{
+    margin-left: 1.05rem;
+}
+.mb-3 p {
+    margin-left: 1.05rem;
+}
+footer {
+    width: 90%;
+    margin-left: 5%;
+    padding: 3%;
+}
+* {
+    font-family: 'Outfit', sans-serif;
+}

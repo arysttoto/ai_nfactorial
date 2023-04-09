@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Solutions page
+{% endblock %}
+
+{% block body %}
+<main>
+  <section class="py-5 text-center container">
+    <div class="row py-lg-5">
+      <div class="col-lg-6 col-md-8 mx-auto">
+        <h1 class="fw-light">Global Solutions</h1>
+        <p class="lead text-muted">People around the world join the global discussion to solve the problem of disease prevention, awareness of it and access to healthcare.</p>
+        <p>
+          <a href="/create-article" class="btn btn-primary my-2">Post article</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <div class="album py-5 bg-light">
+    <div class="container">
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+        {% for article in articles %}
+        <div class="col">
+          <div class="card shadow-sm">
+            <div class="card-body">
+              <h1>{{ article[2] }}</h1>
+              <p class="card-text">{{ article[3] }}</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a href="/articles/{{article[0]}}" class="btn btn-sm btn-outline-secondary">View</a>
+                </div>
+                <small class="text-muted">{{ article[1] }}</small>
+                <small class="text-muted">{{ article[4] }}</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</main>
+{% endblock %}

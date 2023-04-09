@@ -1,0 +1,142 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Ruffier Test
+{% endblock %}
+
+{% block links %}
+<style>
+    * {
+        font-family: "Outfit", sans-serif;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+    }
+    h1 {
+        margin-top: 10px;
+    }
+    h3 {
+        color: black;
+        text-align: center;
+    }
+    p {
+        color: black;
+    }
+    body {
+        background: white;
+    }
+
+    .personal-data-collection {
+        margin-top: 1.6rem;
+    }
+
+    input {
+        border-radius: 15px;
+        border: none;
+        padding: 10px;
+    }
+
+    .pulse {
+        margin-top: 4rem;
+    }
+
+    .aftermath {
+        margin-top: 4rem;
+    }
+
+    .process {
+        margin-top: 4rem;
+    }
+
+    #p2 {
+        margin-top: 0.6rem;
+    }
+
+    .record {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+    .results {
+        margin-top: 2rem;
+    }
+
+    a {
+        text-decoration: none;
+        color: white;
+    }
+
+    button {
+        border: none;
+        background-color: #9ccc9b;
+        border-radius: 15px;
+        transition: all 0.5s ease-in-out;
+        padding: 5px 20px;
+    }
+
+    button:hover {
+        background-color: #398237;
+        cursor: pointer;
+    }
+
+    input {
+        border: dotted 3px #398237;
+        background-color: #9ccc9b;
+        height: 100%;
+        width: 50%;
+    }
+    .b-radius{
+        width: 80%;
+        margin-left: 10%;
+        border: 4px double gainsboro;
+        padding: 25px;
+        border-radius: 30px 10px ;
+        background-color: rgb(65, 105, 225);
+        color:rgb(255, 255, 255);
+    }
+
+</style>
+{% endblock %}
+
+{% block body %}
+<form method="post" class="ruffier_test_post">
+	<h1>Ruffier Test</h1>
+	<p class="b-radius">
+	  Ruffier test is commonly used to assess one's ability to practice a
+	  physical activity. The test involves the measurement of the pulse before
+	  and after a short exercise of moderate intensity. The lower the Ruffier
+	  index is, the better the recovery is after physical exertion.
+	</p>
+	<div class="personal-data-collection">
+	    <p>Enter your name in the box.</p>
+	    <input type="text" name="Name" id="Name" placeholder="Name">
+	    <p>Enter your age in the box.</p>
+	    <input type="number" name="Age" id="Age" placeholder="Age" required>
+	</div>
+	<div class="pulse">
+	    <p>Measure your pulse for 15 seconds. <br> Enter the recordings below.
+	    </p>
+	    <input type="number" name="p3" id="p3" placeholder="Recordings" required>
+	</div>
+	<div class="process">
+	    <p>Make 30 sits in 45 seconds.</p>
+	</div>
+	<div class="aftermath">
+	    <p>Measure your pulse immediately after completing the exercise. (P1) <br> Rest for a minute and measure your pulse for 15 minutes. (P2) <br> Insert recordings below.</p>
+	    <div class="record">
+	    <input type="number" name="p1" id="p1" placeholder="P1" required>
+	    <input type="number" name="p2" id="p2" placeholder="P2" required>
+	</div>
+	</div>
+	<div class="results">
+	    <button type="submit">Results!</button>
+	</div>
+</form>
+{% endblock %}

@@ -1,0 +1,305 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Quick test
+{% endblock %}
+
+{% block links %}
+<style>
+    .test_title {
+        text-align: center;
+        margin: 10px;
+    }
+    body {
+        margin: 0;
+        align-items: center;
+    }
+    form {
+        margin-left: 10%;
+        width: 80%;
+    }
+    form div {
+        width: 100%;
+        padding: 5%;
+        border: dotted 3px #398237;
+        background-color: #9ccc9b;
+    }
+    .button {
+        background-color: #4CAF50; /* Green */
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        width: 20%;
+        margin-left: 40%;
+        padding: 5px;
+        border-radius: 10px;
+    }
+    li {
+        list-style-type: none;
+    }
+    label {
+        display: inline;
+    }
+</style>
+{% endblock %}
+
+{% block body %}
+<h1 class="test_title">Heart Risk Test</h1>
+<br>
+<form method="post">
+    <div class="question1">
+        <h2>How often do you smoke?</h2>
+        <br>
+        <ul>
+            <li>
+                <input type="radio" id="never" name="1" value="1">
+                <label for="never">I have never smoked</label>
+            </li>
+            <br>
+            <li>
+                <input type="radio" id="two" name="1" value="2">
+                <label for="two">It's been more than 2 years since I smoked</label>
+            </li>
+            <br>
+            <li>
+                <input type="radio" id="ten" name="1" value="3">
+                <label for="ten">I smoke a cigar, pipe, or less than 10  cigarettes per day</label>
+            </li>
+            <br>
+            <li>
+                <input type="radio" id="half" name="1" value="4">
+                <label for="half">I've smoked 1/2 pack to 1 pack per day for 5-10 years</label>
+            </li>
+            <br>
+            <li>
+                <input type="radio" id="fif" name="1" value="5">
+                <label for="fif">I've smoked 1-2 packs per day for 10-20 years</label>
+            </li>
+            <br>
+            <li>
+                <input type="radio" id="twe" name="1" value="6">
+                <label for="twe">I've smoked more than 2 packs per day for over 20 years</label>
+            </li>
+        </ul>
+    </div>
+    <br>
+    <div class="question2">
+        <h2>Has your doctor ever had concern about your blood pressure?</h2>
+        <br>
+        <ul>
+            <li>
+                <input type="radio" id="no" name="2" value="1">
+                <label for="no">No, my blood pressure is normal</label>
+            </li>
+            <br>
+            <li>
+                <input type="radio" id="ex" name="2" value="2">
+                <label for="ex">Yes, my doctor has expressed concern that my blood pressure is occasionally elevated</label>
+            </li>
+            <br>
+            <li>
+                <input type="radio" id="high" name="2" value="3">
+                <label for="high">Yes, I am on medication to control my high blood pressure</label>
+            </li>
+        </ul>
+    </div>
+    <br>
+    <div class="question3">
+        <h2>How often do you exercise?</h2>
+        <br>
+        <ul>
+            <li>
+                <input type="radio" id="fisi" name="3" value="1">
+                <label for="fisi">5-6 times a week</label><br>
+            </li>
+            <br>
+            <li>
+                <input type="radio" id="thfo" name="3" value="2">
+                <label for="thfo">3-4 times per week</label><br>
+            </li>
+            <br>
+            <li>
+                <input type="radio" id="ontw" name="3" value="3">
+                <label for="ontw">1-2 times per week</label>
+            </li>
+            <br>
+            <li>
+                <input type="radio" id="noreg" name="3" value="4">
+                <label for="noreg">No regular exercise</label>
+            </li>
+        </ul>
+    </div>
+    <br>
+    <div class="question4">
+        <h2>Are you overweight?</h2>
+        <br>
+        <ul>
+            <li>
+                <input type="radio" id="ideal" name="4" value="1">
+                <label for="ideal">No, I'm at an ideal weight or 5% below</label>
+            </li>
+            <br>
+            <li>
+                <input type="radio" id="pound" name="4" value="2">
+                <label for="pound">Yes, I'm 5-15 pounds overweight</label>
+            </li>
+            <br>
+            <li>
+                <input type="radio" id="sixtwe" name="4" value="3">
+                <label for="sixtwe">Yes, I'm 16-25 pounds overweight</label>
+            </li>
+            <br>
+            <li>
+                <input type="radio" id="twesix" name="4" value="4">
+                <label for="twesix">Yes, I'm 26-50 pounds overweight</label>
+            </li>
+            <br>
+            <li>
+                <input type="radio" id="morefif" name="4" value="5">
+                <label for="morefif">Yes, I'm more than 50 pounds overweight</label>
+            </li>
+        </ul>
+    </div>
+    <br>
+    <div class="question5">
+        <h2>Age/Sex?</h2>
+        <br>
+        <ul>
+            <li>
+                <input type="radio" id="underf" name="5" value="1">
+                <label for="underf">Female under 55</label>
+            </li>
+            <br>
+            <li>
+                <input type="radio" id="underfo" name="5" value="2">
+                <label for="underfo">Male under 45</label>
+            </li>
+            <br>
+            <li>
+                <input type="radio" id="fifni" name="5" value="3">
+                <label for="fifni">Female under 55-59</label>
+            </li>
+            <br>
+            <li>
+                <input type="radio" id="fofini" name="5" value="4">
+                <label for="fofini">Male 45-59</label>
+            </li>
+            <br>
+            <li>
+                <input type="radio" id="oversi" name="5" value="5">
+                <label for="oversi">Male or female age 60 or over</label>
+            </li>
+        </ul>
+    </div>
+    <br>
+    <div class="question6">
+        <h2>Does your family have a history of heart disease?</h2>
+        <br>
+        <ul>
+            <li>
+                <input type="radio" id="noone" name="6" value="1">
+                <label for="noone">No one in my family has a known history of heart disease</label>
+            </li>
+            <br>
+            <li>
+                <input type="radio" id="rela" name="6" value="2">
+                <label for="rela">I have one relative over 60 with heart disease</label>
+            </li>
+            <br>
+            <li>
+                <input type="radio" id="dis" name="6" value="3">
+                <label for="dis">I have one relative under 60 with heart disease</label>
+            </li>
+            <br>
+            <li>
+                <input type="radio" id="he" name="6" value="4">
+                <label for="he">I have two relatives under 60 with heart disease</label>
+            </li>
+            <br>
+            <li>
+                <input type="radio" id="more" name="6" value="5">
+                <label for="more">I have three or more relatives under 60 with heart disease</label>
+            </li>
+        </ul>
+    </div>
+    <br>
+    <div class="question7">
+        <h2>How many servings of red meats, organ meats, fried foods, high-fat dairy, or high fat sweets do you eat per week?</h2>
+        <br>
+        <ul>
+            <li>
+                <input type="radio" id="otwo" name="7" value="1">
+                <label for="otwo">0-2 servings</label>
+            </li>
+            <br>
+            <li>
+                <input type="radio" id="thse" name="7" value="2">
+                <label for="thse">3-7 servings</label>
+            </li>
+            <br>
+            <li>
+                <input type="radio" id="morese" name="7" value="3">
+                <label for="morese">More than 7 servings</label>
+            </li>
+        </ul>
+    </div>
+    <br>
+    <div class="question8">
+        <h2>Do you have diabetes?</h2>
+        <br>
+        <ul>
+            <li>
+                <input type="radio" id="na" name="8" value="1">
+                <label for="na">No</label>
+            </li>
+            <br>
+            <li>
+                <input type="radio" id="contr" name="8" value="2">
+                <label for="contr">Yes, and I control it by my diet</label>
+            </li>
+            <br>
+            <li>
+                <input type="radio" id="medic" name="8" value="3">
+                <label for="medic">Yes, and I am on medication to control my blood sugar</label>
+            </li>
+        </ul>
+    </div>
+    <br>
+    <div class="question9">
+        <h2>How often are you stressed?</h2>
+        <br>
+        <ul>
+            <li>
+                <input type="radio" id="str" name="9" value="1">
+                <label for="str">Seldom stressed and cope very well</label>
+            </li>
+            <br>
+            <li>
+                <input type="radio" id="cope" name="9" value="2">
+                <label for="cope">Sometimes stressed and cope fairly well</label>
+            </li>
+            <br>
+            <li>
+                <input type="radio" id="freq" name="9" value="3">
+                <label for="freq">Often stressed and frequently have trouble coping</label>
+            </li>
+            <br>
+            <li>
+                <input type="radio" id="heav" name="9" value="4">
+                <label for="heav">Heavily stressed and have trouble coping all times</label>
+            </li>
+            <br>
+            <li>
+                <input type="radio" id="exce" name="9" value="5">
+                <label for="exce">Excessively stressed and am unable to cope</label>
+            </li>
+        </ul>
+    </div>
+    <br>
+    <button class="button" type="submit">Results!</button>
+</form>
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %}
+My prognosis!
+{% endblock %}
+
+{% block links %}
+<style>
+    .position-relative.p-5.text-center.text-muted.bg-body.border.border-dashed.rounded-5{
+        margin: 5%;
+    }
+    .what-it-that-link {
+        text-decoration: none;
+        color: white;
+    }
+</style>
+{% endblock %}
+
+{% block body %}
+<div class="position-relative p-5 text-center text-muted bg-body border border-dashed rounded-5">
+    <h1 class="text-body-emphasis">Possible disease: {{ session['symptom_based_prognosis'] }}</h1>
+    <p class="col-lg-6 mx-auto mb-4">
+      This results are just a prognosis and may be wrong, however we recommend you to vist a doctor or read more about it below.
+    </p>
+    <button class="btn btn-primary px-5 mb-5" type="button">
+      <a href="/read-about-diseases" class="what-it-that-link">What is that?</a>
+    </button>
+</div>
+{% endblock %}
