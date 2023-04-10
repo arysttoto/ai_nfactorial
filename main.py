@@ -1,16 +1,8 @@
-import time
 import joblib
 from flask import Flask, render_template, request, redirect, session
 from flask_session import Session
 from datetime import datetime
 import sqlite3
-import pandas as pd
-import pickle
-from sklearn.model_selection import train_test_split
-from sklearn.preprocessing import StandardScaler
-from sklearn.neighbors import KNeighborsClassifier
-from sklearn.metrics import confusion_matrix, accuracy_score
-from csv import writer
 from ruffier_calculations import result_comments
 from diseases_dictionary import dict_diseases
 from dict_symptoms import dict_symptoms
@@ -29,19 +21,6 @@ Session(app)
 @app.route('/')
 def index():
     return render_template('index.html')
-
-# @app.route('/healthcare')
-# def healthcare():
-#     db = sqlite3.connect('blog.db')
-#     sql = db.cursor()
-#     sql.execute(f"""SELECT * FROM hospitals WHERE continent = 'africa'""")
-#     hospitals_africa = sql.fetchall()
-#     sql.execute(f"""SELECT * FROM hospitals WHERE continent = 'europe'""")
-#     hospitals_europe = sql.fetchall()
-#     sql.execute(f"""SELECT * FROM hospitals WHERE continent = 'asia'""")
-#     hospitals_asia = sql.fetchall()
-#     sql.close()
-#     return render_template('healthcare.html', hospitals_africa=hospitals_africa, hospitals_asia=hospitals_asia, hospitals_europe=hospitals_europe)
 
 @app.route('/find-my-disease', methods=["POST", "GET"])
 def find_my_disease():
@@ -118,43 +97,6 @@ def ruffier_test():
 def results():
     return render_template('results.html')
 
-######## EXAMPLE OF A TEST BASED ON AI #########
-# @app.route('/our-tests/1', methods=["POST", "GET"])
-# def quick_test():
-#     if request.method == 'POST':
-#         answer1 = request.form['1']
-#         answer2 = request.form['2']
-#         answer3 = request.form['3']
-#         answer4 = request.form['4']
-#         answer5 = request.form['5']
-#         answer6 = request.form['6']
-#         answer7 = request.form['7']
-#         answer8 = request.form['8']
-#         answer9 = request.form['9']
-#         ######################################################################################
-#         result = model.predict(x_test)
-#         List = [int(answer1), int(answer2), int(answer3), int(answer4), int(answer5), int(answer6), int(answer7), int(answer8),int(answer9), int(result[0])]
-#         if result == 1:
-#             recommendations = 'Low risk, congratulations!'
-#         elif result == 2:
-#             recommendations = 'Average risk, you should make check ups often!'
-#         else:
-#             recommendations = 'High risk, you should go to a hospital urgently!'
-#         ######################################################################################
-#         # add the object to the csv file
-#         with open('data.csv', 'a') as file:
-#             writer_object = writer(file)
-#
-#             # Pass the list as an argument into
-#             # the writerow()
-#             writer_object.writerow(List)
-#
-#             # Close the file object
-#             file.close()
-#
-#         return render_template('results.html', result=result, recommendations=recommendations)
-#     else:
-#         return render_template('quick-test.html')
 @app.route('/my-articles')
 def my_articles():
     if session.get('name'):
@@ -162,21 +104,6 @@ def my_articles():
         return render_template('my-articles.html', data=data)
     else:
         return redirect('/my-prognosis')
-
-# @app.route('/articles')
-# def solutions():
-
-
-# for future use, continuing to read the article
-# @app.route('/articles/<int:id>')
-# def view(id):
-#     db = sqlite3.connect('blog.db')
-#     sql = db.cursor()
-#     sql.execute(f"""SELECT * FROM articles WHERE id = {id}""")
-#     article = sql.fetchone()
-#     db.commit()
-#     return render_template('view.html', article=article)
-
 
 @app.route('/create-article', methods=["POST", "GET"])
 def create_solution():
