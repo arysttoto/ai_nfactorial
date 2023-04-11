@@ -1,6 +1,5 @@
 import cohere
 import openai
-import requests
 from cohere.responses.classify import Example
 
 cohereai_api = 'jiVVfDp486Fug9leuHm9yxzmdxwxiaFAc5rS44Mb'
